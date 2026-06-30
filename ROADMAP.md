@@ -6,9 +6,9 @@
 
 ## Current Status
 
-- **Current Phase:** Phase 2 — Agile machinery (Phase 1 complete)
-- **Last Session:** 2026-06-25
-- **Next Task:** Phase 2 → Issue links/relations — `blocks | blocked_by | relates_to | duplicates`
+- **Current Phase:** Phase 3 — Collaboration & polish (Phase 2 complete)
+- **Last Session:** 2026-06-30
+- **Next Task:** Phase 3 → Email-based invites
 
 ---
 
@@ -54,14 +54,14 @@ These lock the TZ §12 open questions (per `CLAUDE.md`). Do not re-litigate duri
 
 - [x] Cycles module — CRUD + add/remove issues + progress summary
 - [x] Modules module — CRUD + add/remove issues (many-to-many) + progress
-- [ ] Issue links/relations — `blocks | blocked_by | relates_to | duplicates`
-- [ ] Full filtering + sorting (`sort_by`/`order`) + grouping (`group_by`) on issue list
-- [ ] Activity log — audit trail powering issue history feed
+- [x] Issue links/relations — `blocks | blocked_by | relates_to | duplicates`
+- [x] Full filtering + sorting (`sort_by`/`order`) + grouping (`group_by`) on issue list
+- [x] Activity log — audit trail powering issue history feed
 
 ## Phase 3 — Collaboration & polish
 
-- [ ] Attachments — object storage (S3/MinIO), DB metadata only
-- [ ] Notifications — generated on assign/mention/comment events; list + mark-read
+- [x] Attachments — object storage (S3/MinIO), DB metadata only
+- [x] Notifications — generated on assign/mention/comment events; list + mark-read
 - [ ] Email-based invites
 - [ ] OAuth login
 
