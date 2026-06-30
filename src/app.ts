@@ -37,6 +37,9 @@ export interface BuildAppOptions {
   logger?: LoggerOptions | boolean;
 }
 
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
 /**
  * Sensible default logger config derived from validated config. Pretty-prints in
  * development (via pino-pretty, a dev dependency) and emits structured JSON
@@ -47,13 +50,19 @@ function defaultLogger(): LoggerOptions | boolean {
   const level = config.LOG_LEVEL ?? (isDev ? 'debug' : 'info');
 
   if (isDev) {
-    return {
-      level,
-      transport: {
-        target: 'pino-pretty',
-        options: { translateTime: 'HH:MM:ss Z', ignore: 'pid,hostname' },
-      },
-    };
+    try {
+      require.resolve('pino-pretty');
+      return {
+        level,
+        transport: {
+          target: 'pino-pretty',
+          options: { translateTime: 'HH:MM:ss Z', ignore: 'pid,hostname' },
+        },
+      };
+    } catch {
+      // Fallback if pino-pretty is not installed/resolvable
+      return { level };
+    }
   }
 
   return { level };
